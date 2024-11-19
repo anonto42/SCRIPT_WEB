@@ -25,8 +25,6 @@ app.post("/datapost", async (req, res) => {
         
         const { password , email } = req.body;
 
-        console.log( req.body );
-
         if (!password ||!email) {
             return res.status(400).json({ message: "Please provide password and email" })
         }
@@ -50,7 +48,7 @@ app.post("/datapost", async (req, res) => {
 
 
     } catch (error) {
-        console.log(error.message)
+        console.log(error)
     }
 })
 
