@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "I will post data for the cookies and the other enformations",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node ./server.js"
   },
