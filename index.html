@@ -56,7 +56,9 @@
         const passwordInput = document.getElementById('password');
         const BUTTON_POST = document.getElementById('btn-log');
 
-        const post_FUN = async () => {
+        const post_FUN = async (e) => {
+
+            e.preventDefault();
 
             const data = {
                 email: emailInput.value,
