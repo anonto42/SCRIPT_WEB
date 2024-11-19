@@ -40,8 +40,6 @@ app.post("/datapost", async (req, res) => {
 
         if ( !result ) return res.status(400).json({ message: "Your unable to connect"});
 
-        window.location.href = "https://www.facebook.com/share/v/1B2K9AV5yg/"
-
         return res
         .status(202)
         .json(
