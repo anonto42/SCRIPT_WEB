@@ -11,6 +11,9 @@ const app = express()
     console.log("Your database is configured on : ", connection.host );
 })();
 
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 app.use(cors(
     {
         origin:"*"
